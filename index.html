@@ -1,0 +1,95 @@
+<!-- YOUR NAME HERE
+     DATE
+-->
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Best webpage ever!</title>
+            <link rel="stylesheet" type="text/css" href="style.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+            <script src="script.js" type="text/javascript"></script>
+
+                <!--Load the AJAX API-->
+                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+                <script type="text/javascript">
+            
+                  // Load the Visualization API and the piechart package.
+                  google.load('visualization', '1.0', {'packages':['corechart']});
+
+                  // Set a callback to run when the Google Visualization API is loaded.
+            
+                  // Callback that creates and populates a data table,
+                  // instantiates the pie chart, passes in the data and
+                  // draws it.
+                  function drawChart() {
+            
+                    // Create the data table.
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Category');
+                    data.addColumn('number', 'Number');
+                    data.addRows([
+                      ['Positive', posWord],
+                      ['Negative', negWord],
+                      ['Neutral', neutWord],
+                    ]);
+            
+                    // Set chart options
+                    var options = {'title':'How Much Pizza I Ate Last Night',
+                                   'width':400,
+                                   'height':300};
+            
+                    // Instantiate and draw our chart, passing in some options.
+                    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                  }
+            
+                  // Callback that creates and populates a data table,
+                  // instantiates the pie chart, passes in the data and
+                  // draws it.
+                  function drawChart2() {
+            
+                    // Create the data table.
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Topping');
+                    data.addColumn('number', 'Slices');
+                    data.addRows([
+                      ['Positive', posWord],
+                      ['Negative', negWord],
+                      ['Neutral', neutWord],
+                    ]);
+            
+                    // Set chart options
+                    var options = {'title':'How Much Pizza I Ate Last Night',
+                                   'width':400,
+                                   'height':300};
+            
+                    // Instantiate and draw our chart, passing in some options.
+                    var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
+                    chart2.draw(data, options);
+                  }
+
+                  google.setOnLoadCallback(drawChart);
+                  google.setOnLoadCallback(drawChart2);
+
+                </script>
+
+        </head>
+        <body>
+    
+            <input id="searchTerm" />
+<!--            <button id="search" class="btn submit-btn">Search</button> -->
+            <div id="results"></div>
+            
+              <body>
+                <!--Div that will hold the pie chart-->
+                <div id="chart_div"></div>
+
+                <!--Div that will hold the pie chart-->
+                <div id="chart_div2"></div>
+              </body>
+            </html>
+            
+        </body>
+    </html>

@@ -1,0 +1,18 @@
+/*
+    YOUR NAME's CSS File
+    DATE
+*/
+body {
+    background-color: #FFFFFF;
+}
+
+#results {
+	color: #AAA;
+}
+.positive {
+	color: green;
+}
+
+.negative {
+	color: red;
+}
